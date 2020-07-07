@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,13 +17,12 @@
 </head>
 
 <body>
-
   {% comment %} Top Bar {% endcomment %}
   {% include 'partials/_topbar.html' %}
   {% comment %} Nav Bar {% endcomment %}
   {% include 'partials/_navbar.html' %}
 
-  {% block content %}{% endblock  %}
+  {% block content %}{% endblock content %}
 
   {% comment %} Footer {% endcomment %}
   {% include 'partials/_footer.html' %}
@@ -33,6 +31,7 @@
   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'js/lightbox.min.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
+
 </body>
 
 </html>
