@@ -18,14 +18,14 @@
 
 <body>
   {% comment %} Top Bar {% endcomment %}
-  {% include 'partials/_topbar.html' %}
+  {% include 'btre/partials/_topbar.html' %}
   {% comment %} Nav Bar {% endcomment %}
-  {% include 'partials/_navbar.html' %}
+  {% include 'btre/partials/_navbar.html' %}
 
   {% block content %}{% endblock content %}
 
   {% comment %} Footer {% endcomment %}
-  {% include 'partials/_footer.html' %}
+  {% include 'btre/partials/_footer.html' %}
 
   <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>

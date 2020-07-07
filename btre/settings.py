@@ -58,7 +58,9 @@ ROOT_URLCONF = 'btre.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        # ! where else to look for 'templates'
+        'DIRS': [os.path.join(BASE_DIR, 'btre/templates')],
+        # ! if installed apps have their own 'templates' dir
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,7 +81,7 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         # pointing to database server, instead of database file
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'NAME': 'btredb',
@@ -126,12 +128,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+# ! STATIC is location for static files linked directly in html
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'btre/static')
 ]
-
+# ! MEDIA is location for files uploaded via backend admin UI
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
