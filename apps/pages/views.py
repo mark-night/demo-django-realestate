@@ -10,6 +10,6 @@ def index(req):
 
 
 def about(req):
-    realtors = Realtor.objects.all()[:3]
+    realtors = Realtor.objects.order_by('-hire_date')
     mvp = list(filter(lambda x: x.is_mvp, realtors))[0]
     return render(req, 'pages/about.html', {'realtors': realtors, 'mvp': mvp})
