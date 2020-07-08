@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'apps.listings.apps.ListingsConfig',
     'apps.realtors.apps.RealtorsConfig',
     'apps.accounts.apps.AccountsConfig',
+    'apps.contacts.apps.ContactsConfig',
     'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -138,3 +139,10 @@ STATICFILES_DIRS = [
 # ! MEDIA is location for files uploaded via backend admin UI
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Email Config
+# EMAIL_HOST = 'smtp.office365.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = ''
+# EMAIL_HOST_PASSWORD = ""
+# EMAIL_USE_TLS = True
