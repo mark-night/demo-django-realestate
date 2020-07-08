@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from .models import Listing
+from .choices import state_choices, price_choices, bedroom_choices
 
 
 def index(req):
@@ -21,4 +22,37 @@ def listing(req, listing_id):
 
 
 def search(req):
-    return render(req, 'listings/search.html')
+    listings = Listing.objects.order_by('-list_date').filter(is_published=True)
+
+    keywords = req.GET.get('keywords')
+    if keywords:
+        listings = listings.filter(description__icontains=keywords)
+
+    city = req.GET.get('city')
+    if city:
+        listings = listings.filter(city__iexact=city)
+
+    state = req.GET.get('state')
+    if state:
+        listings = listings.filter(state__iexact=state)
+
+    bedrooms = req.GET.get('bedrooms')
+    if bedrooms:
+        listings = listings.filter(bedrooms__lte=bedrooms)
+
+    price = req.GET.get('price')
+    if price:
+        listings = listings.filter(price__lte=price)
+
+    # pagination
+    paginator = Paginator(listings, 6)
+    on_page = req.GET.get('page')
+    page_listings = paginator.get_page(on_page)
+
+    return render(req, 'listings/search.html', {
+        'bedrooms': bedroom_choices.items(),
+        'prices': price_choices.items(),
+        'states': state_choices.items(),
+        'listings': page_listings,
+        'values': req.GET
+    })
