@@ -10,6 +10,7 @@
 - _**Listings**_
   - All properties listing
   - Single property listing
+  - Adding/managing listings through backend GUI console
 - _**Search**_
   - Multiple search queries
 - _**Accounts**_
