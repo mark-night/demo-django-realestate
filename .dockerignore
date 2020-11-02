@@ -1,0 +1,9 @@
+**/.git*
+**/.env
+**/.envrc
+**/.direnv
+**/.prettierrc
+/media/
+/static/
+**/docker-compose.yml
+**/__pycache__
