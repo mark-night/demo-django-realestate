@@ -1,3 +1,10 @@
+/.direnv
+/.envrc
+/static/
+/media/
+docker-compose.yml
+.dockerignore
+
 ### Django ###
 *.log
 *.pot
@@ -10,7 +17,7 @@ db.sqlite3-journal
 /static
 .prettierrc
 /.vscode
-
+.direnv
 ### macOS ###
 # General
 .DS_Store

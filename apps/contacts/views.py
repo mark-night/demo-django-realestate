@@ -37,6 +37,6 @@ def contact(req):
             # )
             messages.success(req, '''Your inquery is received. 
                             Realtor will contact you soon. Thank you.''')
-        return redirect(f'/listings/{listing_id}/')
+        return redirect('listing', listing_id=listing_id)
     else:
         return redirect('listings')
