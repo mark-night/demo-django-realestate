@@ -1,9 +1,6 @@
-**/.git*
-**/.env
-**/.envrc
-**/.direnv
-**/.prettierrc
-/media/
-/static/
-**/docker-compose.yml
-**/__pycache__
+*
+!/apps
+!/btre
+!/manage.py
+!/requirements.txt
+!/docker-entrypoint.sh

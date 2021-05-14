@@ -124,14 +124,15 @@ USE_L10N = True
 
 USE_TZ = True
 
+# where else to search for static files
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'btre/static')]
 
+# where to put collected static files when calling `python manage.py collectstatic`
+# this folder is meant to be provided to dedicate server to serve static files,
+# Django only use it to store collected files, i.e. when running Django dev
+# server, static files are searched and provided from their original locations.
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'btre/static')
-]
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_URL = '/static/'
 
-# FORCE_SCRIPT_NAME is only supported in Django >= 3.1
-scriptname = '' if 'BASE_URL' not in os.environ else os.environ['BASE_URL']
-STATIC_URL = scriptname + '/static/'
-MEDIA_URL = scriptname + '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

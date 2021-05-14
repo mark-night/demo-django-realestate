@@ -1,31 +1,31 @@
 #header {
-    height: 50px;
-    background: #10284e;
-    color: #fff;
+  height: 50px;
+  background: #10284e;
+  color: #fff;
 }
 
 #branding h1 {
-    color: #fff;
+  color: #fff;
 }
 
 a:link,
 a:visited {
-    color: #10284e;
+  color: #10284e;
 }
 
 div.breadcrumbs {
-    background: #30caa0;
-    color: #10284e;
+  background: #30caa0;
+  color: #10284e;
 }
 
 div.breadcrumbs a {
-    color: #333;
+  color: #333;
 }
 
 .module h2,
 .module caption,
 .inline-group h2 {
-    background: #30caa0;
+  background: #30caa0;
 }
 
 .button,
@@ -33,5 +33,40 @@ input[type='submit'],
 input[type='button'],
 .submit-row input,
 a.button {
-    background: #10284e;
+  background: #10284e;
+}
+
+/* dirty fix to disable dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #79aec8;
+    --primary-fg: #fff;
+
+    --body-fg: #10284e;
+    --body-bg: #fff;
+    --body-quiet-color: #666;
+    --body-loud-color: #000;
+
+    --breadcrumbs-link-fg: var(--body-bg);
+    --breadcrumbs-bg: var(--primary);
+
+    --link-fg: #447e9b;
+    --link-hover-color: #036;
+    --link-selected-fg: #5b80b2;
+
+    --hairline-color: #e8e8e8;
+    --border-color: #ccc;
+
+    --error-fg: #ba2121;
+    --message-success-bg: #dfd;
+    --message-warning-bg: #ffc;
+    --message-error-bg: #ffefef;
+
+    --darkened-bg: #f8f8f8;
+    --selected-bg: #e4e4e4;
+    --selected-row: #ffc;
+
+    --close-button-bg: #888;
+    --close-button-hover-bg: #747474;
+  }
 }
